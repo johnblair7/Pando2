@@ -252,10 +252,10 @@ fit_grn_models.SeuratPlus <- function(
 
     # Select peaks passing criteria
     peaks_at_gene <- as.logical(colMaxs(peaks2gene))
-    peaks_with_motif <- as.logical(rowMaxs(peaks2motif))
+   
 
     # Subset data to good peaks
-    peaks_use <- peaks_at_gene & peaks_with_motif
+    peaks_use <- peaks_at_gene
     peaks2gene <- peaks2gene[, peaks_use, drop=FALSE]
     peaks2motif <- peaks2motif[peaks_use, , drop=FALSE]
     peak_data <- peak_data[, peaks_use, drop=FALSE]
